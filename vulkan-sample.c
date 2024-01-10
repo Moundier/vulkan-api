@@ -5,7 +5,6 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
-#define DEBUGGER printf 
 #define new(value) (value*) malloc(sizeof(value)) // Implicit casting
 
 const char* WIN_TITLE = "Sample Vulkan";
@@ -25,7 +24,8 @@ int main() {
 
   App* app = new(App);
 
-	DEBUGGER("[INFO]: main funcion startup...\n");
+	// Console debug
+	printf("[INFO]: main funcion startup...\n");
 
   initWindow(app);
   initVulkan();
@@ -40,14 +40,17 @@ void initWindow(App* app) {
   glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
   app->window = glfwCreateWindow(WIN_WIDTH, WIN_HEIGHT, WIN_TITLE, NULL, NULL);
-	DEBUGGER("[INFO]: init glfw window...\n");
+	
+	// Console debug
+	printf("[INFO]: init glfw window...\n");
 }
 
 void initVulkan(void) { return; }
 
 void eventsLoop(App* app) {
 
-	DEBUGGER("[INFO]: poll events running...\n");
+	// Console debug
+	printf("[INFO]: poll events running...\n");
 
   while (!glfwWindowShouldClose(app->window)) {
     glfwPollEvents(); // Event listener
@@ -57,5 +60,7 @@ void eventsLoop(App* app) {
 void cleanerOff(App* app) {
   glfwDestroyWindow(app->window);
   glfwTerminate();
-	DEBUGGER("[INFO]: application destroyed...\n");
+	
+	// Console debug
+	printf("[INFO]: application destroyed...\n");
 }
