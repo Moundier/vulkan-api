@@ -15,14 +15,14 @@ typedef struct App {
   GLFWwindow *window;
 } App;
 
-void initWindow(App *app);
+void initWindow(App* app);
 void initVulkan(void);
-void eventsLoop(App *app);
-void cleanerOff(App *app);
+void eventsLoop(App* app);
+void cleanerOff(App* app);
 
 int main() {
 
-  App *app = new (App);
+  App* app = new(App);
 
   // Console debug
   printf("[INFO]: main funcion startup...\n");
@@ -34,7 +34,7 @@ int main() {
   return 0;
 }
 
-void initWindow(App *app) {
+void initWindow(App* app) {
   glfwInit();
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
   glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
@@ -47,7 +47,7 @@ void initWindow(App *app) {
 
 void initVulkan(void) { return; }
 
-void eventsLoop(App *app) {
+void eventsLoop(App* app) {
 
   // Console debug
   printf("[INFO]: poll events running...\n");
@@ -57,7 +57,7 @@ void eventsLoop(App *app) {
   }
 }
 
-void cleanerOff(App *app) {
+void cleanerOff(App* app) {
   glfwDestroyWindow(app->window);
   glfwTerminate();
 
