@@ -1,5 +1,6 @@
 # vulkan-sample 
 - A vulkan collection C code.
+- Also, semantical markers were added, using empty definitions.
 
 # learning curves
 
