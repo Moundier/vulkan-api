@@ -1,11 +1,15 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <vulkan/vulkan_core.h>
 
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
+#define DEBSOLE printf                            // Debug Console (Debsole) 
 #define new(value) (value *)malloc(sizeof(value)) // Implicit casting
+#define global const
+#define readonly const
 
 const char *WIN_TITLE = "Sample Vulkan";
 const uint32_t WIN_WIDTH = 800;
